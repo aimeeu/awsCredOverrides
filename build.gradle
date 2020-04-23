@@ -15,8 +15,8 @@ plugins {
 apply plugin: "io.spinnaker.plugin.bundler"
 
 spinnakerBundle {
-  pluginId = "Armory.SpringExamplePlugin"
-  description = "An example of a Spring based plugin that requires no extension points."
+  pluginId = "Armory.AwsCredOverrides"
+  description = "Override AWS cred components."
   provider = "https://github.com/claymccoy"
   version = rootProject.version
 }

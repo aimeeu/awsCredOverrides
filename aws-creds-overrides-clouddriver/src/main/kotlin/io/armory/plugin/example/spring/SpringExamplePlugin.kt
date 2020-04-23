@@ -9,10 +9,10 @@ class SpringExamplePlugin(wrapper: PluginWrapper) : PrivilegedSpringPlugin(wrapp
 
     override fun registerBeanDefinitions(registry: BeanDefinitionRegistry) {
         listOf(
-                beanDefinitionFor(NewService::class.java),
-                beanDefinitionFor(NewProperties::class.java),
-                beanDefinitionFor(NewController::class.java),
-                primaryBeanDefinitionFor(OverrideService::class.java)
+                primaryBeanDefinitionFor(OverrideCredentialsConfig::class.java),
+                primaryBeanDefinitionFor(OverrideCredentialsLoader::class.java),
+                primaryBeanDefinitionFor(OverrideAmazonAccountsSynchronizer::class.java),
+                primaryBeanDefinitionFor(OverrideAccountCredentialsRepository::class.java)
         ).forEach {
             registerBean(it, registry)
         }

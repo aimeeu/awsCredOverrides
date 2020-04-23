@@ -23,19 +23,28 @@ repositories {
 }
 
 spinnakerPlugin {
-  serviceName = "orca"
+  serviceName = "clouddriver"
   pluginClass = "io.armory.plugin.example.spring.SpringExamplePlugin"
 }
 
 dependencies {
   compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
   compileOnly (group: 'org.springframework', name: 'spring-context', version: '5.2.1.RELEASE')
+  compileOnly (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins', version: "${korkVersion}")
   compileOnly (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins-spring-api', version: "${korkVersion}")
   compileOnly (group: 'org.springframework', name: 'spring-web', version: '5.2.2.RELEASE')
-  compileOnly (group: 'com.netflix.spinnaker.orca', name: 'orca-core', version: "${orcaVersion}")
+  compileOnly (group: 'com.netflix.spinnaker.clouddriver', name: 'clouddriver-core', version: "${clouddriverVersion}")
+  compileOnly (group: 'com.netflix.spinnaker.clouddriver', name: 'clouddriver-aws', version: "${clouddriverVersion}")
+  compileOnly (group: 'com.netflix.spinnaker.clouddriver', name: 'clouddriver-security', version: "${clouddriverVersion}")
+  compileOnly(group: 'org.codehaus.groovy', name: 'groovy', version: "2.5.10")
+  compileOnly(group: 'com.amazonaws', name: 'aws-java-sdk-core', version: "1.11.723")
+  compileOnly(group: 'com.netflix.spinnaker.clouddriver', name: 'cats-core', version: "${clouddriverVersion}")
 
 
-  testImplementation (group: 'com.netflix.spinnaker.orca', name: 'orca-core', version: "${orcaVersion}")
+  testImplementation (group: 'com.netflix.spinnaker.clouddriver', name: 'clouddriver-core', version: "${clouddriverVersion}")
+  testImplementation (group: 'com.netflix.spinnaker.clouddriver', name: 'clouddriver-aws', version: "${clouddriverVersion}")
+  testImplementation (group: 'com.netflix.spinnaker.kork', name: 'kork-plugins', version: "${korkVersion}")
+  testImplementation(group: 'org.codehaus.groovy', name: 'groovy', version: "2.5.10")
 
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.3.2"
   testImplementation group: 'io.strikt', name: 'strikt-core', version: '0.22.1'
