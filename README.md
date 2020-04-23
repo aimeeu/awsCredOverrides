@@ -1,6 +1,3 @@
-![CI](https://github.com/spinnaker-plugin-examples/awsCredOverrides/workflows/CI/badge.svg)
-![Latest Kork](https://github.com/spinnaker-plugin-examples/awsCredOverrides/workflows/Latest%20Kork/badge.svg?branch=master)
-![Latest Clouddriver](https://github.com/spinnaker-plugin-examples/awsCredOverrides/workflows/Latest%20Clouddriver/badge.svg?branch=master)
 
 This plugin exercises the Spring capabilities of Spinnaker plugins. There are no PF4J extension points or dependencies. Instead everything is Spring components.
 
